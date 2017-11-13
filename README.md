@@ -4,4 +4,4 @@ curl https://raw.githubusercontent.com/jinsenglin/heartbeat/master/heartbeat.sh 
 
 curl https://raw.githubusercontent.com/jinsenglin/heartbeat/master/heartbeat.py | python
 
-curl https://raw.githubusercontent.com/jinsenglin/heartbeat/master/heartbeat.go | go
+curl https://raw.githubusercontent.com/jinsenglin/heartbeat/master/heartbeat.go && go run heartbeat.go
