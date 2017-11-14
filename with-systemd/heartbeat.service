@@ -1,0 +1,6 @@
+[Unit]
+Description=heartbeat example
+
+[Service]
+ExecStart=/bin/bash /vagrant/with-systemd/heartbeat.sh
+Restart=always
