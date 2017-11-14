@@ -1,5 +1,9 @@
 Status: WIP
 
+try these
+* https://blog.sleeplessbeastie.eu/2014/11/04/how-to-monitor-background-process-using-monit/
+* https://gist.github.com/raecoo/5001521
+
 ```
 vagrant up
 
