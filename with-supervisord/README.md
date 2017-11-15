@@ -1,3 +1,5 @@
+Status: pending
+
 ```
 vagrant up
 

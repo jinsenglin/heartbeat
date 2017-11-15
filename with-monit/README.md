@@ -1,9 +1,3 @@
-Status: WIP
-
-try these
-* https://blog.sleeplessbeastie.eu/2014/11/04/how-to-monitor-background-process-using-monit/
-* https://gist.github.com/raecoo/5001521
-
 ```
 vagrant up
 
@@ -14,9 +8,22 @@ systemctl status monit
 
 cp /vagrant/with-monit/monitrc.modified /etc/monit/monitrc
 monit -t
-monit reload # this will start heartbeat process
+monit reload
 monit status
-monit status heartbeat
-monit stop heartbeat
-monit start heartbeat
+
+chmod +x /vagrant/with-monit/heartbeat.sh
+cp /vagrant/with-monit/heartbeat.conf /etc/monit/conf.d/heartbeat.conf
+monit -t
+monit reload # this will start heartbeat
+
+PID=$(ps aux | grep heartbeat | head -n 1 | awk '{print $2}')
+kill -9 $PID
+
+# you can see that still running
+# double confirm that /tmp/heartbeat.log
 ```
+
+Addiontional Resources
+* https://blog.sleeplessbeastie.eu/2014/11/04/how-to-monitor-background-process-using-monit/
+* https://gist.github.com/raecoo/5001521
+* https://jonarcher.info/2014/12/monit-monitor-processes-services-simply/
